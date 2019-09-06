@@ -1,0 +1,14 @@
+class Solution:
+    def numJewelsInStones(self, J: str, S: str) -> int:
+        my_jewel_stones = 0
+        i = 0
+        while i < len(J):
+            j = J[i]
+            m = 0
+            while m < len(S):
+                n = S[m]
+                if(j == n):
+                    my_jewel_stones += 1
+                m += 1
+            i +=1        
+        return my_jewel_stones 
