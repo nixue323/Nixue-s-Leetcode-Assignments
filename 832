@@ -1,0 +1,19 @@
+class Solution:
+    def flipAndInvertImage(self, A: List[List[int]]) -> List[List[int]]:
+        i = 0
+        B = []
+        while i < len(A):
+            row = A[i]
+            row.reverse()
+            row1 = []
+            j = 0
+            while j < len(row):
+                if row[j] == 1:
+                    row1.append(0)
+                else:
+                    row1.append(1)
+                j += 1
+            B.append(row1)
+            i += 1
+        
+        return B
