@@ -1,0 +1,16 @@
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        listx = list(bin(x).replace('0b',''))
+        listy = list(bin(y).replace('0b',''))
+        while len(listx) < len(listy):
+            listx.insert(0, '0')
+        while len(listx) > len(listy):
+            listy.insert(0, '0')
+        i = 0
+        j = 0
+        while i < len(listx):
+            if listx[i] != listy[i]:
+                j += 1
+            i += 1
+        
+        return j
