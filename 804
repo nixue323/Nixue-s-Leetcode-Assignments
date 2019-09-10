@@ -1,0 +1,18 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+        result = []
+        i = 0
+        while i < len(words):
+            word = words[i]
+            j = 0
+            mword = ""
+            while j < len(word):
+                mword = mword + morse[letter.index(word[j])]
+                j += 1
+            if mword not in result:
+                result.append(mword)
+            i += 1
+        
+        return len(result)
