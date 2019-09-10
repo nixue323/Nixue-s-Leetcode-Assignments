@@ -1,0 +1,10 @@
+class Solution:
+    def repeatedNTimes(self, A: List[int]) -> int:
+        a = len(A) / 2
+        result = ''
+        for i in A:
+            if A.count(i) == a:
+                result = i
+                break
+        
+        return result
