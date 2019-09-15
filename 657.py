@@ -1,19 +1,7 @@
 class Solution:
     def judgeCircle(self, moves: str) -> bool:
-        x = 0
-        y = 0
+        d = {'L':0,'R':0,'U':0,'D':0}
         for i in moves:
-            if i == 'L':
-                x -= 1
-            if i == 'R':
-                x += 1
-            if i == 'D':
-                y -= 1
-            else:
-                y += 1
+            d[i] += 1
         
-        if x == 0 and y == 0:
-            result = 'TRUE'
-        else:
-            result = 'FALSE'
-        return result
+        return d['L'] == d['R'] and d['U'] == d['D']
